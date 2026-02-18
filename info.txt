@@ -1,0 +1,107 @@
+para crear un entorno virtual
+
+python -m venv venv
+
+
+para activarlo venv\Scripts\activate
+para desactivarlo es deactivate
+
+
+
+
+pip install fastapi uvicorn -- sirve para ejecutar el servidor
+
+
+pip freeze > requirements.txt
+
+
+uvicorn app.main:app --reload -- para prender el server
+
+
+pip install sqlalchemy psycopg2-binary -- esto es una dependencia pero no tengo claro para que es pero esta relacionado con la base de datos
+
+pip install python-dotenv -- me mando a instalarlo pero no se para que sirve ni de que es (creo que es para poder ussar el .env)
+
+
+
+pip uninstall psycopg2
+pip uninstall psycopg2-binary
+
+pip install psycopg[binary]
+
+pip install email-validator
+pip install "pydantic[email]"
+
+pip install passlib[bcrypt] python-jose[cryptography]
+
+pip install jinja2
+
+pip install python-jose[cryptography]
+
+
+Puedes generar una segura con:
+
+python -c "import secrets; print(secrets.token_hex(32))"
+
+
+pip install python-multipart
+
+
+
+--------------------------------------------------------------------------------------
+frontend
+
+npm create vite@latest finance-frontend
+
+le das a react y luego a javascript
+
+
+cd finance-frontend
+npm install
+npm run dev -- esto prende el server frontend
+
+npm install axios react-router-dom
+
+estos dos son disque para estilos y eso 
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p  --- o pon este mejor  (npx tailwindcss@3 init -p)
+
+npm install
+npm install -D tailwindcss@3.4.19 postcss autoprefixer -- (se especifica la version para que no tenga errores)
+npx tailwindcss --version
+npx tailwindcss init -p
+
+
+npm install axios
+
+
+npm install react-hot-toast
+
+
+
+
+git init
+git config --global user.name "name"
+git config --global user.email "ronysony.er@gmail.com"
+
+
+
+git remote remove origin
+
+
+git remote add origin https://github.com/Saul435/finanzas-explotame
+git branch -M main
+git push -u origin main
+
+
+
+git add .
+git commit -m "commit"
+git push
+
+
+si git push da error puedes usar esto para arreglarlo y luego ejecutas git push
+
+
+git pull origin main --rebase
