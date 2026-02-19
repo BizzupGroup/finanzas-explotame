@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext  } from "react";
+import { AuthContext } from "../context/AuthContext";
 import api from "../api";
-import { useNavigate } from "react-router-dom";
+/*import { useNavigate } from "react-router-dom";*/
 import toast from "react-hot-toast";
 
 export default function Login({ switchToRegister }) {
 
+  const { setToken } = useContext(AuthContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();*/
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -19,10 +22,11 @@ export default function Login({ switchToRegister }) {
     });
 
     localStorage.setItem("token", res.data.access_token);
+    setToken(res.data.access_token); // 👈 CLAVE
 
     toast.success("Inicio de sesión exitoso 🎉");
 
-    navigate("/dashboard"); // 👈 REDIRECCIÓN
+    //navigate("/dashboard"); // 👈 REDIRECCIÓN
 
   } catch (err) {
     toast.error(err?.response?.data?.detail || "Credenciales incorrectas");
