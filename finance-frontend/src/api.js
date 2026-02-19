@@ -14,4 +14,14 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.data?.detail) {
+      return Promise.reject(error.response.data.detail);
+    }
+    return Promise.reject("Error del servidor");
+  }
+);
+
 export default api;
