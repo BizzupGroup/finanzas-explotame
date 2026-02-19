@@ -15,7 +15,8 @@ app = FastAPI(title="Finance App API")
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "finanzas-explotame-ebon.vercel.app"
+    "https://finanzas-explotame-ebon.vercel.app",
+    "https://finanzas-explotame-bizzups-projects.vercel.app",
 
 ]
 
