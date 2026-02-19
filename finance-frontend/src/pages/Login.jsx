@@ -28,9 +28,14 @@ export default function Login({ switchToRegister }) {
 
     //navigate("/dashboard"); // 👈 REDIRECCIÓN
 
+  //} catch (err) {
+  //  toast.error(err?.response?.data?.detail || "Credenciales incorrectas");
+  //}
+
   } catch (err) {
-    toast.error(err?.response?.data?.detail || "Credenciales incorrectas");
+    toast.error(err);
   }
+
 };
 
 
