@@ -12,4 +12,5 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     transactions = relationship("Transaction", back_populates="user")
     categories = relationship("Category", back_populates="user")
+    
 
